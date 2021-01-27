@@ -7,7 +7,7 @@
 	"inbounds": [
 		{
 			"port": 2333,
-			"protocol": "vmess",
+			"protocol": "vless",
 			"settings": {
 				"clients": [
 					{
@@ -16,10 +16,9 @@
 						"alterId": 233
 					}
 				],
-				"detour": {
-					"to": "dynamic"
-				}
+				"decryption": "none"
 			},
+			"listen": "127.0.0.1",
 			"streamSettings": {
 				"network": "ws"
 			},
@@ -30,26 +29,7 @@
 					"tls"
 				]
 			}
-		},
-        {
-            "protocol": "vmess",
-            "port": "10000-20000",
-            "tag": "dynamic",
-            "settings": {
-                "default": {
-                    "level": 1,
-                    "alterId": 32
-                }
-            },
-            "allocate": {
-                "strategy": "random",
-                "concurrency": 2,
-                "refresh": 5
-            },
-            "streamSettings": {
-                "network": "ws"
-            }
-        }
+		}
 		//include_ss
 		//include_socks
 		//include_mtproto
